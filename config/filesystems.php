@@ -40,7 +40,18 @@ return [
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
+            'permissions' => [
+                'dir' => [
+                    'public'  => 0777 ,
+                    'private' => 0777 ,
+                ],
+                'file' => [
+                    'public'  => 0666 ,
+                    'private' => 0666,
+                ],
+            ],
         ],
+
 
         's3' => [
             'driver' => 's3',
